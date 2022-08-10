@@ -1,0 +1,307 @@
+:root{
+	--red: #ff4655;
+	--black: #111;
+	--white: #ece8e1;
+	--cbBlue: #0b9bd0;
+	--brWhite: #ffffff;
+	--darkBlue: #0f1923;
+	--purpleBlue: #2949d2;
+	
+	/* Used for outlining characters. */
+	--gray: #777;
+}
+
+body{
+	/**/
+	background-image: url("https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blte6088e7599a28fd3/62b4ac17919dfb0f9bf00456/REV_Valorant_2022_E5A1_PlayVALORANT_PlayValorantHomepage_3440x1020_MB02.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	
+	font-family: 'VALORANT', sans-serif;
+	font-size: x-large;
+	background-color: var(--black);
+	color: var(--brWhite);
+	display: grid;
+	height: 100vh;
+	margin: 0;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 100%;
+	justify-items: stretch;
+}
+select, input[type="checkbox"], button{
+	cursor: pointer;
+}
+
+select, input[type="text"]{
+	font-family: 'VALORANT', sans-serif;
+	border-radius: 10px;
+	border: 1px solid #777;
+	background-color: var(--brWhite);
+	text-align: start;
+}
+
+input[type="text"]{
+	right: 10px;
+}
+
+option{
+	background-color:#54394c;
+	color: var(--brWhite);
+}
+
+option:disabled{
+	background-color:#000;
+	color: var(--brWhite);
+}
+
+
+#submitButton{
+	grid-area: button;
+	font-family: 'VALORANT', sans-serif;
+	font-size: 30px;
+	border: none;
+	width: 150px;
+	height: 50px;
+	line-height: 53px;
+	text-align: center;
+	background-color: var(--red);
+	color: var(--white);
+	border-radius: 10px;
+	justify-self: center;
+}
+#submitButton:hover{
+	background-color: var(--purpleBlue);
+}
+.positionItem{
+	position: relative;
+	top: 3px;
+}
+
+.checkmark{
+	height:50%;
+	width:55%;
+	background-color:white;
+	border-radius: 7px;
+}
+
+.gridCenterLeft{
+	display: grid;
+	justify-items: center;
+	text-align: center;
+	
+	width:100%;
+	grid-template-columns: 5% 10% 35% 35% 15%;
+	grid-template-rows: 15% 35% 35% 15%;
+}
+
+#firstDivLeft{
+	grid-template-areas:
+		". . . . ."
+		". . label1 dropdown ."
+		". . label2 textbox ."
+		". . . . .";
+	justify-content: center;
+}
+.fdlLabel1{
+	grid-area: label1;
+	margin: auto;
+	
+}
+.fdlDropdown{
+	grid-area: dropdown;
+	height: 45%;
+	width: 62.5%;
+	margin: auto;
+}
+.fdlLabel2{
+	grid-area: label2;
+	margin: auto;
+}
+.fdlTextbox{
+	grid-area: textbox;
+	height: 30%;
+	width: 60%;
+	margin: auto;
+}
+
+#secondDivLeft{
+	grid-template-areas:
+		". . . . ."
+		". . label dropdown ."
+		". . text text ."
+		". . . . .";
+	justify-content: center;
+}
+.sdlLabel{
+	grid-area: label;
+	margin: auto;
+}
+.sdlDropdown{
+	grid-area: dropdown;
+	height: 45%;
+	width: 62.5%;
+	margin: auto;
+}
+.sdlText{
+	grid-area: text;
+	margin: auto;
+}
+
+#thirdDivLeft{
+	grid-template-areas:
+		". . . . ."
+		". checkbox label dropdown ."
+		". . . . ."
+		". . . . .";
+	justify-content: center;
+}
+.tdlCheckbox{
+	grid-area: checkbox;
+	margin: auto;
+}
+#dailyQuests{
+	height: 50%;
+	width: 55%;
+	opacity: 0;
+}
+#dailyQuests:checked ~ .checkmark{
+	background-color: var(--cbBlue);
+}
+#dailyQuests:not(:checked) ~ #svgValorant1{
+	fill: var(--red);
+}
+.tdlLabel{
+	grid-area: label;
+	margin: auto;
+}
+.tdlDropdown{
+	grid-area: dropdown;
+	height: 45%;
+	width: 62.5%;
+	margin: auto;
+}
+
+#fourthDivLeft{
+	grid-template-areas:
+		". . . . ."
+		". checkbox label1 label2 ."
+		". . . . ."
+		". . . . .";
+	justify-content: center;
+}
+.frdlCheckbox{
+	grid-area: checkbox;
+	margin: auto;
+}
+#bpCheckbox{
+	height: 50%;
+	width: 55%;
+	opacity: 0;
+}
+#bpCheckbox:checked ~ .checkmark{
+	background-color: var(--cbBlue);
+}
+#bpCheckbox:not(:checked) ~ #svgValorant2{
+	fill: var(--red);
+}
+.frdlLabel1{
+	grid-area: label1;
+	margin: auto;
+}
+.frdlLabel2{
+	grid-area: label2;
+	margin: auto;
+}
+
+#fifthDivLeft{
+	grid-template-areas:
+		". . . button ."
+		". . . button ."
+		". . . . ."
+		". . . . .";
+	justify-content: center;
+}
+
+.gridCenterRight{
+	display: grid;
+	justify-items: center;
+	text-align: center;
+	width:100%;
+	grid-template-columns: 15% 70% 15%;
+	grid-template-rows: 15% 35% 35% 15%;
+	grid-template-areas:
+		". . ."
+		". header ."
+		". info ."
+		". . .";
+}
+
+.titleGame{
+	grid-area: header;
+	font-size: x-large;
+	text-shadow:
+   -1px -1px 0 var(--gray),  
+    1px -1px 0 var(--gray),
+    -1px 1px 0 var(--gray),
+     1px 1px 0 var(--gray);
+	/*mix-blend-mode: plus-lighter;*/
+	z-index: 1;
+	margin: auto;
+}
+.contentGame{
+	grid-area: info;
+	font-size: small;
+	text-shadow:
+   -1px -1px 0 var(--gray),  
+    1px -1px 0 var(--gray),
+    -1px 1px 0 var(--gray),
+     1px 1px 0 var(--gray);
+	z-index: 1;
+	margin: auto;
+}
+.bgHeaderBox{
+	background-color: white;
+	width: 95%;
+	grid-area: header;
+	border-radius: 100px;
+	opacity: .4;
+	mix-blend-mode: plus-lighter;
+	z-index: 0;
+	height: 50px;
+	margin: auto;
+}
+.bgContentBox{
+	background-color: white;
+	width: 95%;
+	grid-area: info;
+	border-radius: 100px;
+	opacity: .4;
+	mix-blend-mode: plus-lighter;
+	z-index: 0;
+	height: 50px;
+	margin: auto;
+}
+
+#leftHalf{
+	/*
+	background-color: #2473f2;
+	color: white;
+	*/
+	display: grid;
+	grid-template-rows: repeat(4, auto) 15%;
+	text-shadow:
+   -1px -1px 0 var(--gray),  
+    1px -1px 0 var(--gray),
+    -1px 1px 0 var(--gray),
+     1px 1px 0 var(--gray);
+}
+
+#rightHalf{
+	/*background-color: #29e6c6;
+	color: black;*/
+	display: grid;
+	justify-items: center;
+	grid-template-rows: repeat(4, auto);
+	grid-row-gap: 0;
+}
