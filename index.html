@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+	<head>
+		<title>Valorant Battle Pass Calculator</title>
+		<script src="js/main.js"></script>
+		<link href="http://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
+		<link href="css/stylesheet.css" rel="stylesheet">
+		<link href="icons/faviconRed.svg" rel="icon">
+	</head>
+	<body>
+		<div id="leftHalf">
+
+			<div id="firstDivLeft" class="gridCenterLeft">
+				<label class="fdlLabel1 positionItem">From: </label>
+				<select id="startTierDropdown" class="fdlDropdown" onchange="changeSelected(this); calculateRequired()"></select>
+				<label class="fdlLabel2 positionItem"> with current XP: </label>
+				<input id="currentXP" class="fdlTextbox" type="text" maxlength="5" oninput="checkForNumbers(this); calculateRequired()">
+			</div>
+
+			<div id="secondDivLeft" class="gridCenterLeft">
+				<label class="sdlLabel positionItem">To finishing: </label>
+				<select id="endTierDropdown" class="sdlDropdown" onchange="changeSelected(this); calculateRequired()"></select>
+				<p id="resultBox" class="sdlText positionItem">Requires: X amount of XP.</p>
+			</div>
+
+			<div id="thirdDivLeft" class="gridCenterLeft">
+				<input id="dailyQuests" class="tdlCheckbox" type="checkbox">
+				<span class="checkmark tdlCheckbox"></span>
+				<svg fill="#fff" height="25" viewBox="0 0 100 100" width="25" id="svgValorant1" class="tdlCheckbox">
+					<path d="M99.25 48.66V10.28c0-.59-.75-.86-1.12-.39l-41.92 52.4a.627.627 0 00.49 1.02h30.29c.82 0 1.59-.37 2.1-1.01l9.57-11.96c.38-.48.59-1.07.59-1.68zM1.17 50.34L32.66 89.7c.51.64 1.28 1.01 2.1 1.01h30.29c.53 0 .82-.61.49-1.02L1.7 9.89c-.37-.46-1.12-.2-1.12.39v38.38c0 .61.21 1.2.59 1.68z" />
+				</svg>
+				<label class="tdlLabel positionItem">Finish my dailies for: </label>
+				<select id="daysDropdown" class="tdlDropdown"></select>
+			</div>
+			
+			<div id="fourthDivLeft" class="gridCenterLeft">
+				<input id="bpCheckbox" class="frdlCheckbox" type="checkbox">
+				<span class="checkmark tdlCheckbox"></span>
+				<svg fill="#fff" height="25" viewBox="0 0 100 100" width="25" id="svgValorant2" class="frdlCheckbox">
+					<path d="M99.25 48.66V10.28c0-.59-.75-.86-1.12-.39l-41.92 52.4a.627.627 0 00.49 1.02h30.29c.82 0 1.59-.37 2.1-1.01l9.57-11.96c.38-.48.59-1.07.59-1.68zM1.17 50.34L32.66 89.7c.51.64 1.28 1.01 2.1 1.01h30.29c.53 0 .82-.61.49-1.02L1.7 9.89c-.37-.46-1.12-.2-1.12.39v38.38c0 .61.21 1.2.59 1.68z" />
+				</svg>
+				<label class="frdlLabel1 positionItem">I own the Battle Pass</label>
+				<label class="frdlLabel2 positionItem">(+3% Match XP)</label>
+			</div>
+			
+			<div id="fifthDivLeft" class="gridCenterLeft">
+				<button id="submitButton" onclick="calculateXP()">Submit</button>
+			</div>
+			
+		</div>
+		
+		<div id="rightHalf">
+		
+			<div class="gridCenterRight">
+				<p id="remainingXP" class="titleGame positionItem">Remaining XP after dailies: X amount of XP.</p>
+				<div class="bgHeaderBox"></div>
+			</div>
+			
+			<div class="gridCenterRight">
+				<p id="gamesRequiredSpike" class="titleGame positionItem">Spike Rush games required.</p>
+				<div class="bgHeaderBox"></div>
+			</div>
+			
+			<div class="gridCenterRight">
+				<p id="gamesRequiredRepli" class="titleGame positionItem">Replication games required.</p>
+				<div class="bgHeaderBox"></div>
+				<p class="contentGame positionItem">( Using max amount of XP possible for Replication; 100XP per round played, 
+				<br>plus 200XP per round won. (9 x 100) + (5 x 200) = 1900XP. )</p>
+				<div class="bgContentBox"></div>
+			</div>
+			
+			<div class="gridCenterRight">
+				<p id="gamesRequiredEsca" class="titleGame positionItem">Escalation games required.</p>
+				<div class="bgHeaderBox"></div>
+				<p class="contentGame positionItem">( Using max amount of XP possible for Escalation; 800XP for finishing the match, 
+				<br>plus 200XP for the winning team. 1000XP. )</p>
+				<div class="bgContentBox"></div>
+			</div>
+			
+		</div>
+		
+		</body>
+</html>
