@@ -2,7 +2,8 @@
 	<head>
 		<title>Valorant Battle Pass Calculator</title>
 		<script src="js/main.js"></script>
-		<link href="http://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
+		<!--<link href="https://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
+		<link href="VALORANT.ttf" rel="stylesheet">-->
 		<link href="css/stylesheet.css" rel="stylesheet">
 		<link href="icons/faviconRed.svg" rel="icon">
 	</head>
@@ -58,6 +59,8 @@
 			<div class="gridCenterRight">
 				<p id="gamesRequiredSpike" class="titleGame positionItem">Spike Rush games required.</p>
 				<div class="bgHeaderBox"></div>
+				<p class="contentGame positionItem">( Spike Rush is always 1000XP for finishing the match, no further bonuses. )</p>
+				<div class="bgContentBox"></div>
 			</div>
 			
 			<div class="gridCenterRight">
@@ -77,6 +80,42 @@
 			</div>
 			
 		</div>
+		<div id="closeTutorialBox" class="tutorialLetterStyling" onclick="closeTutorial()">
 		
-		</body>
+		</div>
+		<div id="tutorialBox">
+			<p id="tutorialHeader" class="tutorialLetterStyling">How do I use this tool?:</p>
+			<div id="tutorialLeft" class="tutorialLetterStyling unselectable">
+				&#60;
+			</div>
+			<div id="arrowLeftDiv" onclick="tutorialNavigate('left')"></div>
+			
+			<div id="tutorialRight" class="tutorialLetterStyling unselectable">
+				&#62;
+			</div>
+			<div id="arrowRightDiv" onclick="tutorialNavigate('right')"></div>
+			
+			<div id="tutorialContent" class="tutorialLetterStyling">
+				<div id="contentContent" class="tutorialLetterStyling">
+					<img id="tutorialImage" src="images/VBPCStep1.png">
+					<video id="tutorialVideo1" controls>
+						<source src="videos/augh.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<iframe id="tutorialVideo2" src="https://www.youtube.com/embed/sYJPOiManf0" title="xQc funny rant #relatable" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					
+					<div id="tutorialTextDiv">
+						<p id="tutorialText1" class="tutorialText">1: Enter the Battle Pass Tier that you are currently at.</p>
+						<p id="tutorialText2" class="tutorialText">2: Enter the amount of XP of the Tier that you are currently at.</p>
+						<p id="tutorialText3" class="tutorialText">3: Enter the tier goal that you want to reach for this season.</p>
+						<p id="tutorialText4" class="tutorialText">4: Displays the amount of XP that is required for you to reach your goal.</p>
+					</div>
+				</div>
+			</div>
+			
+			<p id="tutorialFooter" class="tutorialLetterStyling">Thank you for using my tool! '^~^' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Click outside the box to exit guide.</p>
+		</div>
+		
+	</body>
+	
 </html>
